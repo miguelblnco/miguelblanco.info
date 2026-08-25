@@ -13,10 +13,6 @@
 
     <style>
 
-        /* =========================
-           BASE
-        ========================= */
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -42,7 +38,7 @@
 
         /* =========================
            CABECERA
-        ========================= */
+        ========================== */
 
         header {
             position: sticky;
@@ -70,7 +66,6 @@
         nav {
             display: flex;
             gap: 28px;
-
             font-size: 14px;
         }
 
@@ -85,11 +80,10 @@
 
         /* =========================
            PRESENTACIÓN
-        ========================= */
+        ========================== */
 
         .intro {
             max-width: 1400px;
-
             margin: 0 auto;
 
             padding: 120px 5vw 90px;
@@ -118,7 +112,7 @@
 
         /* =========================
            GALERÍA
-        ========================= */
+        ========================== */
 
         .gallery {
             max-width: 1500px;
@@ -165,8 +159,39 @@
 
 
         /* =========================
+           VÍDEO
+        ========================== */
+
+        .gallery-video {
+            width: 100%;
+
+            margin-bottom: 18px;
+
+            break-inside: avoid;
+
+            overflow: hidden;
+
+            background: #111;
+
+            column-span: all;
+        }
+
+        .gallery-video video {
+            display: block;
+
+            width: 100%;
+
+            height: auto;
+
+            max-height: 75vh;
+
+            object-fit: cover;
+        }
+
+
+        /* =========================
            CONTACTO
-        ========================= */
+        ========================== */
 
         .contact {
             max-width: 1500px;
@@ -226,7 +251,7 @@
 
         /* =========================
            PIE
-        ========================= */
+        ========================== */
 
         footer {
             display: flex;
@@ -247,7 +272,7 @@
 
         /* =========================
            LIGHTBOX
-        ========================= */
+        ========================== */
 
         .lightbox {
             position: fixed;
@@ -310,7 +335,7 @@
 
         /* =========================
            MÓVIL
-        ========================= */
+        ========================== */
 
         @media (max-width: 900px) {
 
@@ -359,6 +384,14 @@
                 columns: 1;
 
                 padding-bottom: 80px;
+            }
+
+            .gallery-video {
+                margin-bottom: 18px;
+            }
+
+            .gallery-video video {
+                max-height: 70vh;
             }
 
             .contact {
@@ -465,6 +498,29 @@
                 >
 
             </a>
+
+
+            <!-- VÍDEO -->
+
+            <div class="gallery-video">
+
+                <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    aria-label="Vídeo de fotografía inmobiliaria"
+                >
+
+                    <source
+                        src="images/video-01.mp4"
+                        type="video/mp4"
+                    >
+
+                </video>
+
+            </div>
 
 
             <a class="gallery-item">
@@ -582,34 +638,37 @@
             </h2>
 
 
-<div class="contact-links">
-
-    <a
-        class="contact-link"
-        href="mailto:contacto.miguelblanco@gmail.com"
-    >
-        contacto.miguelblanco@gmail.com
-    </a>
+            <div class="contact-links">
 
 
-    <a
-        class="contact-link"
-        href="tel:+34638340659"
-    >
-        +34 638 340 659
-    </a>
+                <a
+                    class="contact-link"
+                    href="mailto:contacto.miguelblanco@gmail.com"
+                >
+                    contacto.miguelblanco@gmail.com
+                </a>
 
 
-    <a
-        class="contact-link"
-        href="https://www.instagram.com/miguelblnco/"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        Instagram · @miguelblnco
-    </a>
+                <a
+                    class="contact-link"
+                    href="tel:+34638340659"
+                >
+                    +34 638 340 659
+                </a>
 
-</div>
+
+                <a
+                    class="contact-link"
+                    href="https://www.instagram.com/miguelblnco/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Instagram · @miguelblnco
+                </a>
+
+
+            </div>
+
         </section>
 
 
@@ -631,9 +690,7 @@
     </footer>
 
 
-    <!-- =========================
-         VISUALIZACIÓN DE FOTOS
-    ========================== -->
+    <!-- LIGHTBOX -->
 
     <div
         class="lightbox"
@@ -657,9 +714,7 @@
     </div>
 
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
+    <!-- JAVASCRIPT -->
 
     <script>
 
