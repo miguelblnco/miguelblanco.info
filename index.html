@@ -13,6 +13,10 @@
 
     <style>
 
+        /* =========================
+           BASE
+        ========================== */
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -66,6 +70,7 @@
         nav {
             display: flex;
             gap: 28px;
+
             font-size: 14px;
         }
 
@@ -84,6 +89,7 @@
 
         .intro {
             max-width: 1400px;
+
             margin: 0 auto;
 
             padding: 120px 5vw 90px;
@@ -119,7 +125,7 @@
 
             margin: 0 auto;
 
-            padding: 0 5vw 130px;
+            padding: 0 5vw 100px;
 
             columns: 3;
 
@@ -162,28 +168,38 @@
            VÍDEO
         ========================== */
 
-        .gallery-video {
+        .video-section {
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
             width: 100%;
 
-            margin-bottom: 18px;
+            padding: 70px 5vw 130px;
 
-            break-inside: avoid;
+            border-top: 1px solid #dededc;
+        }
+
+        .video-wrapper {
+            width: 70%;
+
+            max-width: 1050px;
 
             overflow: hidden;
 
             background: #111;
-
-            column-span: all;
         }
 
-        .gallery-video video {
+        .video-wrapper video {
             display: block;
 
             width: 100%;
 
             height: auto;
 
-            max-height: 75vh;
+            max-height: 500px;
 
             object-fit: cover;
         }
@@ -347,6 +363,10 @@
                 padding-top: 90px;
             }
 
+            .video-wrapper {
+                width: 85%;
+            }
+
         }
 
 
@@ -383,14 +403,18 @@
             .gallery {
                 columns: 1;
 
-                padding-bottom: 80px;
+                padding-bottom: 40px;
             }
 
-            .gallery-video {
-                margin-bottom: 18px;
+            .video-section {
+                padding: 60px 5vw 85px;
             }
 
-            .gallery-video video {
+            .video-wrapper {
+                width: 100%;
+            }
+
+            .video-wrapper video {
                 max-height: 70vh;
             }
 
@@ -479,7 +503,6 @@
             class="gallery"
         >
 
-
             <a class="gallery-item">
 
                 <img
@@ -498,29 +521,6 @@
                 >
 
             </a>
-
-
-            <!-- VÍDEO -->
-
-            <div class="gallery-video">
-
-                <video
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                    preload="metadata"
-                    aria-label="Vídeo de fotografía inmobiliaria"
-                >
-
-                    <source
-                        src="images/video-01.mp4"
-                        type="video/mp4"
-                    >
-
-                </video>
-
-            </div>
 
 
             <a class="gallery-item">
@@ -622,11 +622,41 @@
 
             </a>
 
+        </section>
+
+
+        <!-- =========================
+             VÍDEO
+        ========================== -->
+
+        <section class="video-section">
+
+            <div class="video-wrapper">
+
+                <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    aria-label="Vídeo de fotografía inmobiliaria"
+                >
+
+                    <source
+                        src="images/video-01.mp4"
+                        type="video/mp4"
+                    >
+
+                </video>
+
+            </div>
 
         </section>
 
 
-        <!-- CONTACTO -->
+        <!-- =========================
+             CONTACTO
+        ========================== -->
 
         <section
             id="contacto"
@@ -675,7 +705,9 @@
     </main>
 
 
-    <!-- PIE -->
+    <!-- =========================
+         PIE
+    ========================== -->
 
     <footer>
 
@@ -690,7 +722,9 @@
     </footer>
 
 
-    <!-- LIGHTBOX -->
+    <!-- =========================
+         LIGHTBOX
+    ========================== -->
 
     <div
         class="lightbox"
@@ -714,7 +748,9 @@
     </div>
 
 
-    <!-- JAVASCRIPT -->
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
 
     <script>
 
@@ -808,3 +844,6 @@
 
 </body>
 </html>
+Después de pegarlo
+Haz:
+Commit changes → Commit changes
