@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Miguel Blanco - Fotografía inmobiliaria</title>
+    <title>Miguel Blanco — Fotografía inmobiliaria</title>
 
     <meta
         name="description"
-        content="Miguel Blanco - Fotografía inmobiliaria"
+        content="Miguel Blanco — Fotografía inmobiliaria"
     >
 
     <style>
@@ -209,7 +209,7 @@
            TARIFAS
         ========================== */
 
-        .rates {
+        .pricing {
             max-width: 1500px;
 
             margin: 0 auto;
@@ -219,7 +219,11 @@
             border-top: 1px solid #dededc;
         }
 
-        .rates h2 {
+        .pricing-header {
+            margin-bottom: 65px;
+        }
+
+        .pricing-header h2 {
             font-size: clamp(48px, 7vw, 95px);
 
             font-weight: 500;
@@ -227,99 +231,112 @@
             letter-spacing: -0.065em;
 
             line-height: 0.95;
-
-            margin-bottom: 24px;
         }
 
-        .rates-intro {
-            max-width: 530px;
+        .pricing-header p {
+            max-width: 520px;
 
-            margin-bottom: 50px;
+            margin-top: 30px;
 
-            font-size: 18px;
+            font-size: 17px;
 
             color: #666;
         }
 
-        .rates-grid {
+        .pricing-grid {
             display: grid;
 
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
 
             gap: 18px;
         }
 
-        .rate-card {
+        .price-card {
             position: relative;
 
-            min-height: 240px;
+            padding: 35px;
 
-            padding: 30px;
+            min-height: 330px;
 
-            border: 1px solid #cfcfcd;
+            display: flex;
 
-            background: #fdfdfb;
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            border: 1px solid #d6d6d4;
+
+            background: #f8f8f6;
         }
 
-        .rate-card h3 {
-            font-size: 23px;
-
-            font-weight: 500;
-
-            letter-spacing: -0.035em;
-        }
-
-        .rate-price {
-            margin: 30px 0 14px;
-
-            font-size: clamp(42px, 4vw, 60px);
-
-            font-weight: 500;
-
-            letter-spacing: -0.06em;
-
-            line-height: 1;
-        }
-
-        .rate-card p:last-child {
-            color: #666;
-        }
-
-        .rate-card.featured {
+        .price-card.recommended {
             border-color: #171717;
+        }
+
+        .recommended-label {
+            position: absolute;
+
+            top: 20px;
+            right: 20px;
+
+            padding: 6px 11px;
+
+            border-radius: 100px;
 
             background: #171717;
 
-            color: #f8f8f6;
-        }
-
-        .rate-card.featured p:last-child {
-            color: #d4d4d1;
-        }
-
-        .rate-badge {
-            position: absolute;
-
-            top: 22px;
-
-            right: 22px;
-
-            padding: 6px 10px;
-
-            background: #f8f8f6;
-
-            color: #171717;
+            color: white;
 
             font-size: 11px;
 
-            font-weight: 600;
-
-            letter-spacing: 0.08em;
+            letter-spacing: 0.04em;
 
             text-transform: uppercase;
         }
 
-        .rates-details {
+        .price-card h3 {
+            font-size: 20px;
+
+            font-weight: 500;
+
+            letter-spacing: -0.02em;
+        }
+
+        .price-card .price {
+            margin-top: 22px;
+
+            font-size: 48px;
+
+            font-weight: 500;
+
+            letter-spacing: -0.05em;
+
+            line-height: 1;
+        }
+
+        .price-card .price span {
+            font-size: 15px;
+
+            color: #777;
+
+            letter-spacing: 0;
+        }
+
+        .price-card ul {
+            margin-top: 30px;
+
+            padding-left: 18px;
+
+            color: #555;
+
+            font-size: 15px;
+        }
+
+        .price-card li {
+            margin-bottom: 8px;
+        }
+
+        .pricing-notes {
             display: grid;
 
             grid-template-columns: repeat(3, 1fr);
@@ -329,22 +346,50 @@
             margin-top: 18px;
         }
 
-        .rate-detail {
-            padding: 24px 0;
+        .pricing-note {
+            padding: 28px 30px;
 
-            border-top: 1px solid #cfcfcd;
+            border-top: 1px solid #d6d6d4;
 
-            color: #666;
+            font-size: 15px;
         }
 
-        .rate-detail strong {
+        .pricing-note strong {
             display: block;
 
-            margin-bottom: 5px;
+            margin-bottom: 8px;
 
-            color: #171717;
+            font-size: 16px;
 
             font-weight: 500;
+
+            color: #171717;
+        }
+
+        .agency-note {
+            margin-top: 55px;
+
+            padding: 30px;
+
+            border: 1px solid #d6d6d4;
+        }
+
+        .agency-note strong {
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-size: 18px;
+
+            font-weight: 500;
+        }
+
+        .agency-note p {
+            max-width: 700px;
+
+            color: #666;
+
+            font-size: 15px;
         }
 
 
@@ -493,7 +538,7 @@
 
 
         /* =========================
-           MÓVIL 
+           MÓVIL
         ========================== */
 
         @media (max-width: 900px) {
@@ -510,11 +555,11 @@
                 width: 85%;
             }
 
-            .rates-grid {
+            .pricing-grid {
                 grid-template-columns: 1fr;
             }
 
-            .rates-details {
+            .pricing-notes {
                 grid-template-columns: 1fr;
             }
 
@@ -532,7 +577,7 @@
             }
 
             nav {
-                gap: 14px;
+                gap: 15px;
 
                 font-size: 13px;
             }
@@ -569,24 +614,44 @@
                 max-height: 70vh;
             }
 
-            .rates {
+            .pricing {
                 padding-top: 75px;
 
                 padding-bottom: 85px;
             }
 
-            .rates-intro {
+            .pricing-header {
+                margin-bottom: 45px;
+            }
+
+            .pricing-header p {
                 font-size: 16px;
             }
 
-            .rate-card {
+            .price-card {
                 min-height: auto;
 
-                padding: 26px;
+                padding: 30px;
             }
 
-            .rates-details {
-                margin-top: 8px;
+            .price-card .price {
+                font-size: 42px;
+            }
+
+            .pricing-notes {
+                gap: 0;
+            }
+
+            .pricing-note {
+                padding: 25px 5px;
+
+                border-top: 1px solid #d6d6d4;
+            }
+
+            .agency-note {
+                margin-top: 40px;
+
+                padding: 25px;
             }
 
             .contact {
@@ -617,6 +682,11 @@
 
 <body>
 
+
+    <!-- =========================
+         CABECERA
+    ========================== -->
+
     <header>
 
         <a href="#" class="logo">
@@ -642,7 +712,14 @@
     </header>
 
 
+    <!-- =========================
+         CONTENIDO
+    ========================== -->
+
     <main>
+
+
+        <!-- PRESENTACIÓN -->
 
         <section class="intro">
 
@@ -659,61 +736,127 @@
         </section>
 
 
+        <!-- GALERÍA -->
+
         <section
             id="trabajo"
             class="gallery"
         >
 
             <a class="gallery-item">
-                <img src="images/foto-01.jpg" alt="Fotografía inmobiliaria 1">
+
+                <img
+                    src="images/foto-01.jpg"
+                    alt="Fotografía inmobiliaria 1"
+                >
+
             </a>
 
             <a class="gallery-item">
-                <img src="images/foto-02.jpg" alt="Fotografía inmobiliaria 2">
+
+                <img
+                    src="images/foto-02.jpg"
+                    alt="Fotografía inmobiliaria 2"
+                >
+
             </a>
 
             <a class="gallery-item">
-                <img src="images/foto-03.jpg" alt="Fotografía inmobiliaria 3">
+
+                <img
+                    src="images/foto-03.jpg"
+                    alt="Fotografía inmobiliaria 3"
+                >
+
             </a>
 
             <a class="gallery-item">
-                <img src="images/foto-04.jpg" alt="Fotografía inmobiliaria 4">
+
+                <img
+                    src="images/foto-04.jpg"
+                    alt="Fotografía inmobiliaria 4"
+                >
+
             </a>
 
             <a class="gallery-item">
-                <img src="images/foto-05.jpg" alt="Fotografía inmobiliaria 5">
+
+                <img
+                    src="images/foto-05.jpg"
+                    alt="Fotografía inmobiliaria 5"
+                >
+
             </a>
 
             <a class="gallery-item">
-                <img src="images/foto-06.jpg" alt="Fotografía inmobiliaria 6">
+
+                <img
+                    src="images/foto-06.jpg"
+                    alt="Fotografía inmobiliaria 6"
+                >
+
             </a>
 
             <a class="gallery-item">
-                <img src="images/foto-07.jpg" alt="Fotografía inmobiliaria 7">
+
+                <img
+                    src="images/foto-07.jpg"
+                    alt="Fotografía inmobiliaria 7"
+                >
+
             </a>
 
             <a class="gallery-item">
-                <img src="images/foto-08.jpg" alt="Fotografía inmobiliaria 8">
+
+                <img
+                    src="images/foto-08.jpg"
+                    alt="Fotografía inmobiliaria 8"
+                >
+
             </a>
 
             <a class="gallery-item">
-                <img src="images/foto-09.jpg" alt="Fotografía inmobiliaria 9">
+
+                <img
+                    src="images/foto-09.jpg"
+                    alt="Fotografía inmobiliaria 9"
+                >
+
             </a>
 
             <a class="gallery-item">
-                <img src="images/foto-10.jpg" alt="Fotografía inmobiliaria 10">
+
+                <img
+                    src="images/foto-10.jpg"
+                    alt="Fotografía inmobiliaria 10"
+                >
+
             </a>
 
             <a class="gallery-item">
-                <img src="images/foto-11.jpg" alt="Fotografía inmobiliaria 11">
+
+                <img
+                    src="images/foto-11.jpg"
+                    alt="Fotografía inmobiliaria 11"
+                >
+
             </a>
 
             <a class="gallery-item">
-                <img src="images/foto-12.jpg" alt="Fotografía inmobiliaria 12">
+
+                <img
+                    src="images/foto-12.jpg"
+                    alt="Fotografía inmobiliaria 12"
+                >
+
             </a>
 
         </section>
 
+
+        <!-- =========================
+             VÍDEO
+        ========================== -->
 
         <section class="video-section">
 
@@ -740,97 +883,198 @@
         </section>
 
 
+        <!-- =========================
+             TARIFAS
+        ========================== -->
+
         <section
             id="tarifas"
-            class="rates"
+            class="pricing"
         >
 
-            <h2>
-                Tarifas.
-            </h2>
+            <div class="pricing-header">
 
-            <p class="rates-intro">
-                Servicios de fotografía y vídeo inmobiliario con entrega
-                digital en un plazo de 24–48 horas.
-            </p>
+                <h2>
+                    Tarifas.
+                </h2>
 
-            <div class="rates-grid">
-
-                <article class="rate-card">
-
-                    <h3>
-                        Esencial
-                    </h3>
-
-                    <p class="rate-price">
-                        75 €
-                    </p>
-
-                    <p>
-                        Hasta 15 fotografías finales.
-                    </p>
-
-                </article>
-
-                <article class="rate-card featured">
-
-                    <span class="rate-badge">
-                        Recomendado
-                    </span>
-
-                    <h3>
-                        Estándar
-                    </h3>
-
-                    <p class="rate-price">
-                        100 €
-                    </p>
-
-                    <p>
-                        Hasta 25 fotografías finales.
-                    </p>
-
-                </article>
-
-                <article class="rate-card">
-
-                    <h3>
-                        Vídeo inmobiliario
-                    </h3>
-
-                    <p class="rate-price">
-                        +100 €
-                    </p>
-
-                    <p>
-                        Complemento para mostrar el espacio en movimiento.
-                    </p>
-
-                </article>
+                <p>
+                    Servicios de fotografía y vídeo inmobiliario
+                    con entrega rápida y adaptados a las
+                    necesidades de cada inmueble.
+                </p>
 
             </div>
 
-            <div class="rates-details">
 
-                <p class="rate-detail">
-                    <strong>Fotografías adicionales</strong>
-                    7 €/unidad
+            <div class="pricing-grid">
+
+
+                <!-- ESENCIAL -->
+
+                <article class="price-card">
+
+                    <div>
+
+                        <h3>
+                            Esencial
+                        </h3>
+
+                        <div class="price">
+                            75 €
+                        </div>
+
+                        <ul>
+
+                            <li>
+                                Hasta 15 fotografías
+                            </li>
+
+                            <li>
+                                Edición profesional
+                            </li>
+
+                            <li>
+                                Corrección de perspectiva y color
+                            </li>
+
+                            <li>
+                                Entrega digital
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ESTÁNDAR -->
+
+                <article class="price-card recommended">
+
+                    <span class="recommended-label">
+                        Recomendado
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Estándar
+                        </h3>
+
+                        <div class="price">
+                            100 €
+                        </div>
+
+                        <ul>
+
+                            <li>
+                                Hasta 25 fotografías
+                            </li>
+
+                            <li>
+                                Edición profesional
+                            </li>
+
+                            <li>
+                                Corrección de perspectiva y color
+                            </li>
+
+                            <li>
+                                Entrega digital
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+            <!-- INFORMACIÓN ADICIONAL -->
+
+            <div class="pricing-notes">
+
+
+                <div class="pricing-note">
+
+                    <strong>
+                        Fotografía adicional
+                    </strong>
+
+                    7 € por fotografía.
+
+                </div>
+
+
+                <div class="pricing-note">
+
+                    <strong>
+                        Vídeo inmobiliario
+                    </strong>
+
+                    +100 € como complemento al reportaje fotográfico.
+
+                </div>
+
+
+                <div class="pricing-note">
+
+                    <strong>
+                        Entrega
+                    </strong>
+
+                    Todos los reportajes se entregan en un plazo
+                    de 24–48 horas.
+
+                </div>
+
+
+            </div>
+
+
+            <!-- AGENCIAS -->
+
+            <div class="agency-note">
+
+                <strong>
+                    Colaboraciones con agencias
+                </strong>
+
+                <p>
+                    Para agencias con un volumen habitual de trabajo,
+                    ofrecemos tarifas especiales de colaboración.
                 </p>
 
-                <p class="rate-detail">
-                    <strong>Agencias</strong>
-                    Tarifas especiales para colaboraciones habituales.
-                </p>
+            </div>
 
-                <p class="rate-detail">
-                    <strong>Necesidades específicas</strong>
-                    Presupuesto personalizado.
+
+            <!-- NECESIDADES ESPECÍFICAS -->
+
+            <div class="agency-note">
+
+                <strong>
+                    Necesidades específicas
+                </strong>
+
+                <p>
+                    Promociones inmobiliarias, viviendas de gran tamaño,
+                    contenido para redes u otros trabajos con necesidades
+                    especiales se presupuestan de forma personalizada.
                 </p>
 
             </div>
 
         </section>
 
+
+        <!-- =========================
+             CONTACTO
+        ========================== -->
 
         <section
             id="contacto"
@@ -841,7 +1085,9 @@
                 ¿Hablamos?
             </h2>
 
+
             <div class="contact-links">
+
 
                 <a
                     class="contact-link"
@@ -850,12 +1096,14 @@
                     contacto.miguelblanco@gmail.com
                 </a>
 
+
                 <a
                     class="contact-link"
                     href="tel:+34638340659"
                 >
                     +34 638 340 659
                 </a>
+
 
                 <a
                     class="contact-link"
@@ -866,12 +1114,18 @@
                     Instagram · @miguelblnco
                 </a>
 
+
             </div>
 
         </section>
 
+
     </main>
 
+
+    <!-- =========================
+         PIE
+    ========================== -->
 
     <footer>
 
@@ -886,6 +1140,10 @@
     </footer>
 
 
+    <!-- =========================
+         LIGHTBOX
+    ========================== -->
+
     <div
         class="lightbox"
         id="lightbox"
@@ -898,6 +1156,7 @@
             &times;
         </span>
 
+
         <img
             id="lightboxImage"
             src=""
@@ -906,6 +1165,10 @@
 
     </div>
 
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
 
     <script>
 
@@ -995,6 +1258,7 @@
         );
 
     </script>
+
 
 </body>
 </html>
