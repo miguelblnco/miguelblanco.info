@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Miguel Blanco — Fotografía inmobiliaria</title>
+    <title>Miguel Blanco — Fotografía y vídeo de espacios</title>
 
     <meta
         name="description"
-        content="Miguel Blanco — Fotografía inmobiliaria"
+        content="Miguel Blanco — Fotografía y vídeo de espacios para inmobiliarias, estudios, promotoras y negocios."
     >
 
     <style>
@@ -53,7 +53,7 @@
             justify-content: space-between;
             align-items: center;
 
-            padding: 26px 5vw;
+            padding: 30px 5vw;
 
             background: rgba(248, 248, 246, 0.94);
             backdrop-filter: blur(12px);
@@ -62,16 +62,16 @@
         }
 
         .logo {
-            font-size: 19px;
+            font-size: 22px;
             font-weight: 600;
             letter-spacing: -0.03em;
         }
 
         nav {
             display: flex;
-            gap: 28px;
+            gap: 32px;
 
-            font-size: 14px;
+            font-size: 15px;
         }
 
         nav a {
@@ -108,7 +108,7 @@
         .intro p {
             margin-top: 35px;
 
-            max-width: 420px;
+            max-width: 520px;
 
             font-size: 18px;
 
@@ -126,20 +126,38 @@
             margin: 0 auto;
 
             padding: 0 5vw 100px;
+        }
 
-            columns: 3;
+        .gallery-category {
+            margin-bottom: 80px;
+        }
 
-            column-gap: 18px;
+        .gallery-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .gallery-category h2 {
+            margin-bottom: 24px;
+
+            font-size: 24px;
+
+            font-weight: 500;
+
+            letter-spacing: -0.03em;
+        }
+
+        .gallery-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 18px;
         }
 
         .gallery-item {
             display: block;
 
             width: 100%;
-
-            margin-bottom: 18px;
-
-            break-inside: avoid;
 
             overflow: hidden;
 
@@ -220,7 +238,7 @@
         }
 
         .pricing-header {
-            margin-bottom: 65px;
+            margin-bottom: 55px;
         }
 
         .pricing-header h2 {
@@ -243,12 +261,52 @@
             color: #666;
         }
 
+
+        /* =========================
+           INFORMACIÓN PRECIOS
+        ========================== */
+
+        .agency-note {
+            margin-bottom: 18px;
+
+            padding: 30px;
+
+            border: 1px solid #d6d6d4;
+
+            background: #f8f8f6;
+        }
+
+        .agency-note strong {
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-size: 18px;
+
+            font-weight: 500;
+        }
+
+        .agency-note p {
+            max-width: 700px;
+
+            color: #666;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           TARJETAS
+        ========================== */
+
         .pricing-grid {
             display: grid;
 
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
 
             gap: 18px;
+
+            margin-top: 40px;
         }
 
         .price-card {
@@ -314,14 +372,6 @@
             line-height: 1;
         }
 
-        .price-card .price span {
-            font-size: 15px;
-
-            color: #777;
-
-            letter-spacing: 0;
-        }
-
         .price-card ul {
             margin-top: 30px;
 
@@ -336,10 +386,15 @@
             margin-bottom: 8px;
         }
 
+
+        /* =========================
+           NOTAS
+        ========================== */
+
         .pricing-notes {
             display: grid;
 
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
 
             gap: 18px;
 
@@ -364,32 +419,6 @@
             font-weight: 500;
 
             color: #171717;
-        }
-
-        .agency-note {
-            margin-top: 55px;
-
-            padding: 30px;
-
-            border: 1px solid #d6d6d4;
-        }
-
-        .agency-note strong {
-            display: block;
-
-            margin-bottom: 8px;
-
-            font-size: 18px;
-
-            font-weight: 500;
-        }
-
-        .agency-note p {
-            max-width: 700px;
-
-            color: #666;
-
-            font-size: 15px;
         }
 
 
@@ -543,8 +572,8 @@
 
         @media (max-width: 900px) {
 
-            .gallery {
-                columns: 2;
+            .gallery-grid {
+                grid-template-columns: 1fr;
             }
 
             .intro {
@@ -597,9 +626,17 @@
             }
 
             .gallery {
-                columns: 1;
-
                 padding-bottom: 40px;
+            }
+
+            .gallery-category {
+                margin-bottom: 55px;
+            }
+
+            .gallery-category h2 {
+                font-size: 21px;
+
+                margin-bottom: 18px;
             }
 
             .video-section {
@@ -628,6 +665,14 @@
                 font-size: 16px;
             }
 
+            .agency-note {
+                padding: 25px;
+            }
+
+            .pricing-grid {
+                margin-top: 30px;
+            }
+
             .price-card {
                 min-height: auto;
 
@@ -646,12 +691,6 @@
                 padding: 25px 5px;
 
                 border-top: 1px solid #d6d6d4;
-            }
-
-            .agency-note {
-                margin-top: 40px;
-
-                padding: 25px;
             }
 
             .contact {
@@ -724,13 +763,14 @@
         <section class="intro">
 
             <h1>
-                Fotografía<br>
-                inmobiliaria.
+                Fotografía y vídeo<br>
+                de espacios.
             </h1>
 
             <p>
-                Una selección de trabajos realizados para mostrar
-                espacios de forma cuidada, atractiva y profesional.
+                Creo contenido visual para inmobiliarias, estudios,
+                promotoras y negocios, mostrando sus espacios de forma
+                cuidada, atractiva y profesional.
             </p>
 
         </section>
@@ -743,113 +783,159 @@
             class="gallery"
         >
 
-            <a class="gallery-item">
 
-                <img
-                    src="images/foto-01.jpg"
-                    alt="Fotografía inmobiliaria 1"
-                >
+            <!-- OBRA NUEVA -->
 
-            </a>
+            <div class="gallery-category">
 
-            <a class="gallery-item">
+                <h2>
+                    Obra nueva
+                </h2>
 
-                <img
-                    src="images/foto-02.jpg"
-                    alt="Fotografía inmobiliaria 2"
-                >
+                <div class="gallery-grid">
 
-            </a>
+                    <a class="gallery-item">
 
-            <a class="gallery-item">
+                        <img
+                            src="images/foto-01.jpg"
+                            alt="Fotografía de obra nueva 1"
+                        >
 
-                <img
-                    src="images/foto-03.jpg"
-                    alt="Fotografía inmobiliaria 3"
-                >
+                    </a>
 
-            </a>
+                    <a class="gallery-item">
 
-            <a class="gallery-item">
+                        <img
+                            src="images/foto-02.jpg"
+                            alt="Fotografía de obra nueva 2"
+                        >
 
-                <img
-                    src="images/foto-04.jpg"
-                    alt="Fotografía inmobiliaria 4"
-                >
+                    </a>
 
-            </a>
+                    <a class="gallery-item">
 
-            <a class="gallery-item">
+                        <img
+                            src="images/foto-03.jpg"
+                            alt="Fotografía de obra nueva 3"
+                        >
 
-                <img
-                    src="images/foto-05.jpg"
-                    alt="Fotografía inmobiliaria 5"
-                >
+                    </a>
 
-            </a>
+                    <a class="gallery-item">
 
-            <a class="gallery-item">
+                        <img
+                            src="images/foto-12.jpg"
+                            alt="Fotografía de obra nueva 4"
+                        >
 
-                <img
-                    src="images/foto-06.jpg"
-                    alt="Fotografía inmobiliaria 6"
-                >
+                    </a>
 
-            </a>
+                </div>
 
-            <a class="gallery-item">
+            </div>
 
-                <img
-                    src="images/foto-07.jpg"
-                    alt="Fotografía inmobiliaria 7"
-                >
 
-            </a>
+            <!-- PISO REFORMADO -->
 
-            <a class="gallery-item">
+            <div class="gallery-category">
 
-                <img
-                    src="images/foto-08.jpg"
-                    alt="Fotografía inmobiliaria 8"
-                >
+                <h2>
+                    Piso reformado
+                </h2>
 
-            </a>
+                <div class="gallery-grid">
 
-            <a class="gallery-item">
+                    <a class="gallery-item">
 
-                <img
-                    src="images/foto-09.jpg"
-                    alt="Fotografía inmobiliaria 9"
-                >
+                        <img
+                            src="images/foto-08.jpg"
+                            alt="Fotografía de piso reformado 1"
+                        >
 
-            </a>
+                    </a>
 
-            <a class="gallery-item">
+                    <a class="gallery-item">
 
-                <img
-                    src="images/foto-10.jpg"
-                    alt="Fotografía inmobiliaria 10"
-                >
+                        <img
+                            src="images/foto-09.jpg"
+                            alt="Fotografía de piso reformado 2"
+                        >
 
-            </a>
+                    </a>
 
-            <a class="gallery-item">
+                    <a class="gallery-item">
 
-                <img
-                    src="images/foto-11.jpg"
-                    alt="Fotografía inmobiliaria 11"
-                >
+                        <img
+                            src="images/foto-10.jpg"
+                            alt="Fotografía de piso reformado 3"
+                        >
 
-            </a>
+                    </a>
 
-            <a class="gallery-item">
+                    <a class="gallery-item">
 
-                <img
-                    src="images/foto-12.jpg"
-                    alt="Fotografía inmobiliaria 12"
-                >
+                        <img
+                            src="images/foto-11.jpg"
+                            alt="Fotografía de piso reformado 4"
+                        >
 
-            </a>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- VIVIENDA -->
+
+            <div class="gallery-category">
+
+                <h2>
+                    Vivienda
+                </h2>
+
+                <div class="gallery-grid">
+
+                    <a class="gallery-item">
+
+                        <img
+                            src="images/foto-04.jpg"
+                            alt="Fotografía de vivienda 1"
+                        >
+
+                    </a>
+
+                    <a class="gallery-item">
+
+                        <img
+                            src="images/foto-05.jpg"
+                            alt="Fotografía de vivienda 2"
+                        >
+
+                    </a>
+
+                    <a class="gallery-item">
+
+                        <img
+                            src="images/foto-06.jpg"
+                            alt="Fotografía de vivienda 3"
+                        >
+
+                    </a>
+
+                    <a class="gallery-item">
+
+                        <img
+                            src="images/foto-07.jpg"
+                            alt="Fotografía de vivienda 4"
+                        >
+
+                    </a>
+
+                </div>
+
+            </div>
+
 
         </section>
 
@@ -868,7 +954,7 @@
                     loop
                     playsinline
                     preload="metadata"
-                    aria-label="Vídeo de fotografía inmobiliaria"
+                    aria-label="Vídeo de fotografía y vídeo de espacios"
                 >
 
                     <source
@@ -899,13 +985,48 @@
                 </h2>
 
                 <p>
-                    Servicios de fotografía y vídeo inmobiliario
-                    con entrega rápida y adaptados a las
-                    necesidades de cada inmueble.
+                    Servicios de fotografía y vídeo con entrega rápida
+                    y adaptados a las necesidades de cada inmueble.
                 </p>
 
             </div>
 
+
+            <!-- COLABORACIONES CON AGENCIAS -->
+
+            <div class="agency-note">
+
+                <strong>
+                    Colaboraciones con agencias
+                </strong>
+
+                <p>
+                    Para agencias con un volumen habitual de trabajo,
+                    ofrecemos tarifas especiales de colaboración.
+                    Contacta conmigo para conocer las condiciones.
+                </p>
+
+            </div>
+
+
+            <!-- NECESIDADES ESPECÍFICAS -->
+
+            <div class="agency-note">
+
+                <strong>
+                    Necesidades específicas
+                </strong>
+
+                <p>
+                    Promociones inmobiliarias, viviendas de gran tamaño,
+                    contenido para redes u otros trabajos con necesidades
+                    especiales se presupuestan de forma personalizada.
+                </p>
+
+            </div>
+
+
+            <!-- TARIFAS -->
 
             <div class="pricing-grid">
 
@@ -921,17 +1042,13 @@
                         </h3>
 
                         <div class="price">
-                            75 €
+                            70 €
                         </div>
 
                         <ul>
 
                             <li>
-                                Hasta 15 fotografías
-                            </li>
-
-                            <li>
-                                Edición profesional
+                                Hasta 20 fotografías
                             </li>
 
                             <li>
@@ -970,15 +1087,54 @@
                         <ul>
 
                             <li>
-                                Hasta 25 fotografías
-                            </li>
-
-                            <li>
-                                Edición profesional
+                                Hasta 30 fotografías
                             </li>
 
                             <li>
                                 Corrección de perspectiva y color
+                            </li>
+
+                            <li>
+                                Entrega digital
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PREMIUM -->
+
+                <article class="price-card">
+
+                    <div>
+
+                        <h3>
+                            Premium
+                        </h3>
+
+                        <div class="price">
+                            250 €
+                        </div>
+
+                        <ul>
+
+                            <li>
+                                Hasta 40 fotografías
+                            </li>
+
+                            <li>
+                                Vídeo inmobiliario
+                            </li>
+
+                            <li>
+                                Corrección de perspectiva y color
+                            </li>
+
+                            <li>
+                                Entrega en menos de 12 horas
                             </li>
 
                             <li>
@@ -1014,18 +1170,7 @@
                 <div class="pricing-note">
 
                     <strong>
-                        Vídeo inmobiliario
-                    </strong>
-
-                    +100 € como complemento al reportaje fotográfico.
-
-                </div>
-
-
-                <div class="pricing-note">
-
-                    <strong>
-                        Entrega
+                        Entrega estándar
                     </strong>
 
                     Todos los reportajes se entregan en un plazo
@@ -1036,38 +1181,6 @@
 
             </div>
 
-
-            <!-- AGENCIAS -->
-
-            <div class="agency-note">
-
-                <strong>
-                    Colaboraciones con agencias
-                </strong>
-
-                <p>
-                    Para agencias con un volumen habitual de trabajo,
-                    ofrecemos tarifas especiales de colaboración.
-                </p>
-
-            </div>
-
-
-            <!-- NECESIDADES ESPECÍFICAS -->
-
-            <div class="agency-note">
-
-                <strong>
-                    Necesidades específicas
-                </strong>
-
-                <p>
-                    Promociones inmobiliarias, viviendas de gran tamaño,
-                    contenido para redes u otros trabajos con necesidades
-                    especiales se presupuestan de forma personalizada.
-                </p>
-
-            </div>
 
         </section>
 
@@ -1134,7 +1247,7 @@
         </span>
 
         <span>
-            Fotografía inmobiliaria
+            Fotografía y vídeo de espacios
         </span>
 
     </footer>
