@@ -3,1375 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Miguel Blanco — Fotografía y vídeo de espacios</title>
-
-    <meta
-        name="description"
-        content="Miguel Blanco — Fotografía y vídeo de espacios para inmobiliarias, estudios, promotoras y negocios."
-    >
-
+    <meta name="description" content="Miguel Blanco — Fotografía y vídeo de espacios para inmobiliarias, estudios, promotoras y negocios.">
     <style>
-
-        /* =========================
-           BASE
-        ========================== */
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: #f8f8f6;
-            color: #171717;
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.5;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-
-        /* =========================
-           CABECERA
-        ========================== */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            padding: 30px 5vw;
-
-            background: rgba(248, 248, 246, 0.94);
-            backdrop-filter: blur(12px);
-
-            border-bottom: 1px solid #e4e4e2;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: 600;
-            letter-spacing: -0.03em;
-        }
-
-        nav {
-            display: flex;
-            gap: 32px;
-
-            font-size: 15px;
-        }
-
-        nav a {
-            transition: opacity 0.2s ease;
-        }
-
-        nav a:hover {
-            opacity: 0.45;
-        }
-
-
-        /* =========================
-           PRESENTACIÓN
-        ========================== */
-
-        .intro {
-            max-width: 1400px;
-
-            margin: 0 auto;
-
-            padding: 120px 5vw 90px;
-        }
-
-        .intro h1 {
-            font-size: clamp(56px, 9vw, 125px);
-
-            font-weight: 500;
-
-            letter-spacing: -0.07em;
-
-            line-height: 0.9;
-        }
-
-        .intro p {
-            margin-top: 35px;
-
-            max-width: 520px;
-
-            font-size: 18px;
-
-            color: #666;
-        }
-
-
-        /* =========================
-           GALERÍA
-        ========================== */
-
-        .gallery {
-            max-width: 1500px;
-
-            margin: 0 auto;
-
-            padding: 0 5vw 100px;
-        }
-
-        .gallery-category {
-            margin-bottom: 80px;
-        }
-
-        .gallery-category:last-child {
-            margin-bottom: 0;
-        }
-
-        .gallery-category h2 {
-            margin-bottom: 24px;
-
-            font-size: 24px;
-
-            font-weight: 500;
-
-            letter-spacing: -0.03em;
-        }
-
-        .gallery-grid {
-            display: grid;
-
-            grid-template-columns: repeat(2, 1fr);
-
-            gap: 18px;
-        }
-
-        .gallery-item {
-            display: block;
-
-            width: 100%;
-
-            overflow: hidden;
-
-            cursor: pointer;
-
-            background: #e8e8e6;
-        }
-
-        .gallery-item img {
-            display: block;
-
-            width: 100%;
-
-            height: auto;
-
-            transition:
-                transform 0.6s cubic-bezier(.2,.6,.3,1);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.025);
-        }
-
-
-        /* =========================
-           VÍDEO
-        ========================== */
-
-        .video-section {
-            display: flex;
-
-            flex-direction: column;
-
-            align-items: center;
-
-            width: 100%;
-
-            padding: 70px 5vw 130px;
-
-            border-top: 1px solid #dededc;
-        }
-
-        .video-wrapper {
-            width: 70%;
-
-            max-width: 1050px;
-
-            overflow: hidden;
-
-            background: #111;
-        }
-
-        .video-wrapper video {
-            display: block;
-
-            width: 100%;
-
-            height: auto;
-
-            max-height: 500px;
-
-            object-fit: cover;
-        }
-
-
-        /* =========================
-           TARIFAS
-        ========================== */
-
-        .pricing {
-            max-width: 1500px;
-
-            margin: 0 auto;
-
-            padding: 100px 5vw 120px;
-
-            border-top: 1px solid #dededc;
-        }
-
-        .pricing-header {
-            margin-bottom: 55px;
-        }
-
-        .pricing-header h2 {
-            font-size: clamp(48px, 7vw, 95px);
-
-            font-weight: 500;
-
-            letter-spacing: -0.065em;
-
-            line-height: 0.95;
-        }
-
-        .pricing-header p {
-            max-width: 520px;
-
-            margin-top: 30px;
-
-            font-size: 17px;
-
-            color: #666;
-        }
-
-
-        /* =========================
-           INFORMACIÓN PRECIOS
-        ========================== */
-
-        .agency-note {
-            margin-bottom: 18px;
-
-            padding: 30px;
-
-            border: 1px solid #d6d6d4;
-
-            background: #f8f8f6;
-        }
-
-        .agency-note strong {
-            display: block;
-
-            margin-bottom: 8px;
-
-            font-size: 18px;
-
-            font-weight: 500;
-        }
-
-        .agency-note p {
-            max-width: 700px;
-
-            color: #666;
-
-            font-size: 15px;
-        }
-
-
-        /* =========================
-           TARJETAS
-        ========================== */
-
-        .pricing-grid {
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 18px;
-
-            margin-top: 40px;
-        }
-
-        .price-card {
-            position: relative;
-
-            padding: 35px;
-
-            min-height: 330px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: space-between;
-
-            border: 1px solid #d6d6d4;
-
-            background: #f8f8f6;
-        }
-
-        .price-card.recommended {
-            border-color: #171717;
-        }
-
-        .recommended-label {
-            position: absolute;
-
-            top: 20px;
-            right: 20px;
-
-            padding: 6px 11px;
-
-            border-radius: 100px;
-
-            background: #171717;
-
-            color: white;
-
-            font-size: 11px;
-
-            letter-spacing: 0.04em;
-
-            text-transform: uppercase;
-        }
-
-        .price-card h3 {
-            font-size: 20px;
-
-            font-weight: 500;
-
-            letter-spacing: -0.02em;
-        }
-
-        .price-card .price {
-            margin-top: 22px;
-
-            font-size: 48px;
-
-            font-weight: 500;
-
-            letter-spacing: -0.05em;
-
-            line-height: 1;
-        }
-
-        .price-card ul {
-            margin-top: 30px;
-
-            padding-left: 18px;
-
-            color: #555;
-
-            font-size: 15px;
-        }
-
-        .price-card li {
-            margin-bottom: 8px;
-        }
-
-
-        /* =========================
-           NOTAS
-        ========================== */
-
-        .pricing-notes {
-            display: grid;
-
-            grid-template-columns: repeat(2, 1fr);
-
-            gap: 18px;
-
-            margin-top: 18px;
-        }
-
-        .pricing-note {
-            padding: 28px 30px;
-
-            border-top: 1px solid #d6d6d4;
-
-            font-size: 15px;
-        }
-
-        .pricing-note strong {
-            display: block;
-
-            margin-bottom: 8px;
-
-            font-size: 16px;
-
-            font-weight: 500;
-
-            color: #171717;
-        }
-
-
-        /* =========================
-           CONTACTO
-        ========================== */
-
-        .contact {
-            max-width: 1500px;
-
-            margin: 0 auto;
-
-            padding: 100px 5vw 120px;
-
-            border-top: 1px solid #dededc;
-        }
-
-        .contact h2 {
-            font-size: clamp(48px, 7vw, 95px);
-
-            font-weight: 500;
-
-            letter-spacing: -0.065em;
-
-            line-height: 0.95;
-
-            margin-bottom: 55px;
-        }
-
-        .contact-links {
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 14px;
-        }
-
-        .contact-link {
-            display: inline-block;
-
-            padding: 14px 21px;
-
-            border: 1px solid #cfcfcd;
-
-            border-radius: 100px;
-
-            font-size: 15px;
-
-            transition:
-                background 0.2s ease,
-                color 0.2s ease,
-                border-color 0.2s ease;
-        }
-
-        .contact-link:hover {
-            background: #171717;
-
-            color: white;
-
-            border-color: #171717;
-        }
-
-
-        /* =========================
-           PIE
-        ========================== */
-
-        footer {
-            display: flex;
-
-            justify-content: space-between;
-
-            gap: 20px;
-
-            padding: 25px 5vw 35px;
-
-            border-top: 1px solid #e4e4e2;
-
-            color: #777;
-
-            font-size: 13px;
-        }
-
-
-        /* =========================
-           LIGHTBOX
-        ========================== */
-
-        .lightbox {
-            position: fixed;
-
-            inset: 0;
-
-            z-index: 1000;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            padding: 30px;
-
-            background: rgba(0, 0, 0, 0.95);
-
-            opacity: 0;
-
-            visibility: hidden;
-
-            transition:
-                opacity 0.25s ease,
-                visibility 0.25s ease;
-        }
-
-        .lightbox.active {
-            opacity: 1;
-
-            visibility: visible;
-        }
-
-        .lightbox img {
-            max-width: 95vw;
-
-            max-height: 90vh;
-
-            object-fit: contain;
-        }
-
-        .lightbox-close {
-            position: absolute;
-
-            top: 25px;
-
-            right: 30px;
-
-            color: white;
-
-            font-size: 40px;
-
-            font-weight: 200;
-
-            line-height: 1;
-
-            cursor: pointer;
-        }
-
-
-        /* =========================
-           MÓVIL
-        ========================== */
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { background: #f8f8f6; color: #171717; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; }
+        a { color: inherit; text-decoration: none; }
+        header { position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 30px 5vw; background: rgba(248,248,246,.94); backdrop-filter: blur(12px); border-bottom: 1px solid #e4e4e2; }
+        .logo { font-size: 22px; font-weight: 600; letter-spacing: -.03em; }
+        nav { display: flex; gap: 32px; font-size: 15px; }
+        nav a { transition: opacity .2s ease; }
+        nav a:hover { opacity: .45; }
+        .intro { max-width: 1400px; margin: 0 auto; padding: 120px 5vw 90px; }
+        .intro h1 { font-size: clamp(56px,9vw,125px); font-weight: 500; letter-spacing: -.07em; line-height: .9; }
+        .intro p { margin-top: 35px; max-width: 520px; font-size: 18px; color: #666; }
+        .gallery { max-width: 1500px; margin: 0 auto; padding: 0 5vw 100px; }
+        .gallery-category { margin-bottom: 80px; }
+        .gallery-category:last-child { margin-bottom: 0; }
+        .gallery-category h2 { margin-bottom: 24px; font-size: 24px; font-weight: 500; letter-spacing: -.03em; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+        .gallery-item { display: block; width: 100%; overflow: hidden; cursor: pointer; background: #e8e8e6; }
+        .gallery-item img { display: block; width: 100%; height: auto; transition: transform .6s cubic-bezier(.2,.6,.3,1); }
+        .gallery-item:hover img { transform: scale(1.025); }
+        .video-section { display: flex; flex-direction: column; align-items: center; width: 100%; padding: 70px 5vw 130px; border-top: 1px solid #dededc; }
+        .video-wrapper { width: 70%; max-width: 1050px; overflow: hidden; background: #111; }
+        .video-wrapper video { display: block; width: 100%; height: auto; max-height: 500px; object-fit: cover; }
+        .contact { max-width: 1500px; margin: 0 auto; padding: 100px 5vw 120px; border-top: 1px solid #dededc; }
+        .contact h2 { font-size: clamp(48px,7vw,95px); font-weight: 500; letter-spacing: -.065em; line-height: .95; margin-bottom: 55px; }
+        .contact-links { display: flex; flex-wrap: wrap; gap: 14px; }
+        .contact-link { display: inline-block; padding: 14px 21px; border: 1px solid #cfcfcd; border-radius: 100px; font-size: 15px; transition: background .2s ease,color .2s ease,border-color .2s ease; }
+        .contact-link:hover { background: #171717; color: white; border-color: #171717; }
+        footer { display: flex; justify-content: space-between; gap: 20px; padding: 25px 5vw 35px; border-top: 1px solid #e4e4e2; color: #777; font-size: 13px; }
+        .lightbox { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 30px; background: rgba(0,0,0,.95); opacity: 0; visibility: hidden; transition: opacity .25s ease,visibility .25s ease; }
+        .lightbox.active { opacity: 1; visibility: visible; }
+        .lightbox img { max-width: 95vw; max-height: 90vh; object-fit: contain; }
+        .lightbox-close { position: absolute; top: 25px; right: 30px; color: white; font-size: 40px; font-weight: 200; line-height: 1; cursor: pointer; }
         @media (max-width: 900px) {
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .intro {
-                padding-top: 90px;
-            }
-
-            .video-wrapper {
-                width: 85%;
-            }
-
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-notes {
-                grid-template-columns: 1fr;
-            }
-
+            .gallery-grid { grid-template-columns: 1fr; }
+            .intro { padding-top: 90px; }
+            .video-wrapper { width: 85%; }
         }
-
-
         @media (max-width: 600px) {
-
-            header {
-                padding: 21px 5vw;
-            }
-
-            .logo {
-                font-size: 18px;
-            }
-
-            nav {
-                gap: 15px;
-
-                font-size: 13px;
-            }
-
-            .intro {
-                padding-top: 70px;
-
-                padding-bottom: 60px;
-            }
-
-            .intro h1 {
-                font-size: 58px;
-            }
-
-            .intro p {
-                font-size: 16px;
-            }
-
-            .gallery {
-                padding-bottom: 40px;
-            }
-
-            .gallery-category {
-                margin-bottom: 55px;
-            }
-
-            .gallery-category h2 {
-                font-size: 21px;
-
-                margin-bottom: 18px;
-            }
-
-            .video-section {
-                padding: 60px 5vw 85px;
-            }
-
-            .video-wrapper {
-                width: 100%;
-            }
-
-            .video-wrapper video {
-                max-height: 70vh;
-            }
-
-            .pricing {
-                padding-top: 75px;
-
-                padding-bottom: 85px;
-            }
-
-            .pricing-header {
-                margin-bottom: 45px;
-            }
-
-            .pricing-header p {
-                font-size: 16px;
-            }
-
-            .agency-note {
-                padding: 25px;
-            }
-
-            .pricing-grid {
-                margin-top: 30px;
-            }
-
-            .price-card {
-                min-height: auto;
-
-                padding: 30px;
-            }
-
-            .price-card .price {
-                font-size: 42px;
-            }
-
-            .pricing-notes {
-                gap: 0;
-            }
-
-            .pricing-note {
-                padding: 25px 5px;
-
-                border-top: 1px solid #d6d6d4;
-            }
-
-            .contact {
-                padding-top: 75px;
-
-                padding-bottom: 85px;
-            }
-
-            .contact-links {
-                flex-direction: column;
-
-                align-items: stretch;
-            }
-
-            .contact-link {
-                text-align: center;
-            }
-
-            footer {
-                flex-direction: column;
-            }
-
+            header { padding: 21px 5vw; }
+            .logo { font-size: 18px; }
+            nav { gap: 15px; font-size: 13px; }
+            .intro { padding-top: 70px; padding-bottom: 60px; }
+            .intro h1 { font-size: 58px; }
+            .intro p { font-size: 16px; }
+            .gallery { padding-bottom: 40px; }
+            .gallery-category { margin-bottom: 55px; }
+            .gallery-category h2 { font-size: 21px; margin-bottom: 18px; }
+            .video-section { padding: 60px 5vw 85px; }
+            .video-wrapper { width: 100%; }
+            .video-wrapper video { max-height: 70vh; }
+            .contact { padding-top: 75px; padding-bottom: 85px; }
+            .contact-links { flex-direction: column; align-items: stretch; }
+            .contact-link { text-align: center; }
+            footer { flex-direction: column; }
         }
-
     </style>
 </head>
-
-
 <body>
-
-
-    <!-- =========================
-         CABECERA
-    ========================== -->
-
     <header>
-
-        <a href="#" class="logo">
-            Miguel Blanco
-        </a>
-
+        <a href="#" class="logo">Miguel Blanco</a>
         <nav>
-
-            <a href="#trabajo">
-                Trabajo
-            </a>
-
-            <a href="#tarifas">
-                Tarifas
-            </a>
-
-            <a href="#contacto">
-                Contacto
-            </a>
-
+            <a href="#trabajo">Trabajo</a>
+            <a href="#contacto">Contacto</a>
         </nav>
-
     </header>
-
-
-    <!-- =========================
-         CONTENIDO
-    ========================== -->
-
     <main>
-
-
-        <!-- PRESENTACIÓN -->
-
         <section class="intro">
-
-            <h1>
-                Fotografía y vídeo<br>
-                de espacios.
-            </h1>
-
-            <p>
-                Creo contenido visual para inmobiliarias, estudios,
-                promotoras y negocios, mostrando sus espacios de forma
-                cuidada, atractiva y profesional.
-            </p>
-
+            <h1>Fotografía y vídeo<br>de espacios.</h1>
+            <p>Creo contenido visual para inmobiliarias, estudios, promotoras y negocios, mostrando sus espacios de forma cuidada, atractiva y profesional.</p>
         </section>
-
-
-        <!-- GALERÍA -->
-
-        <section
-            id="trabajo"
-            class="gallery"
-        >
-
-
-            <!-- OBRA NUEVA -->
-
+        <section id="trabajo" class="gallery">
             <div class="gallery-category">
-
-                <h2>
-                    Obra nueva
-                </h2>
-
+                <h2>Obra nueva</h2>
                 <div class="gallery-grid">
-
-                    <a class="gallery-item">
-
-                        <img
-                            src="images/foto-01.jpg"
-                            alt="Fotografía de obra nueva 1"
-                        >
-
-                    </a>
-
-                    <a class="gallery-item">
-
-                        <img
-                            src="images/foto-02.jpg"
-                            alt="Fotografía de obra nueva 2"
-                        >
-
-                    </a>
-
-                    <a class="gallery-item">
-
-                        <img
-                            src="images/foto-03.jpg"
-                            alt="Fotografía de obra nueva 3"
-                        >
-
-                    </a>
-
-                    <a class="gallery-item">
-
-                        <img
-                            src="images/foto-12.jpg"
-                            alt="Fotografía de obra nueva 4"
-                        >
-
-                    </a>
-
+                    <a class="gallery-item"><img src="images/foto-01.jpg" alt="Fotografía de obra nueva 1"></a>
+                    <a class="gallery-item"><img src="images/foto-02.jpg" alt="Fotografía de obra nueva 2"></a>
+                    <a class="gallery-item"><img src="images/foto-03.jpg" alt="Fotografía de obra nueva 3"></a>
+                    <a class="gallery-item"><img src="images/foto-12.jpg" alt="Fotografía de obra nueva 4"></a>
                 </div>
-
             </div>
-
-
-            <!-- PISO REFORMADO -->
-
             <div class="gallery-category">
-
-                <h2>
-                    Piso reformado
-                </h2>
-
+                <h2>Piso reformado</h2>
                 <div class="gallery-grid">
-
-                    <a class="gallery-item">
-
-                        <img
-                            src="images/foto-08.jpg"
-                            alt="Fotografía de piso reformado 1"
-                        >
-
-                    </a>
-
-                    <a class="gallery-item">
-
-                        <img
-                            src="images/foto-09.jpg"
-                            alt="Fotografía de piso reformado 2"
-                        >
-
-                    </a>
-
-                    <a class="gallery-item">
-
-                        <img
-                            src="images/foto-10.jpg"
-                            alt="Fotografía de piso reformado 3"
-                        >
-
-                    </a>
-
-                    <a class="gallery-item">
-
-                        <img
-                            src="images/foto-11.jpg"
-                            alt="Fotografía de piso reformado 4"
-                        >
-
-                    </a>
-
+                    <a class="gallery-item"><img src="images/foto-08.jpg" alt="Fotografía de piso reformado 1"></a>
+                    <a class="gallery-item"><img src="images/foto-09.jpg" alt="Fotografía de piso reformado 2"></a>
+                    <a class="gallery-item"><img src="images/foto-10.jpg" alt="Fotografía de piso reformado 3"></a>
+                    <a class="gallery-item"><img src="images/foto-11.jpg" alt="Fotografía de piso reformado 4"></a>
                 </div>
-
             </div>
-
-
-            <!-- VIVIENDA -->
-
             <div class="gallery-category">
-
-                <h2>
-                    Vivienda
-                </h2>
-
+                <h2>Vivienda</h2>
                 <div class="gallery-grid">
-
-                    <a class="gallery-item">
-
-                        <img
-                            src="images/foto-04.jpg"
-                            alt="Fotografía de vivienda 1"
-                        >
-
-                    </a>
-
-                    <a class="gallery-item">
-
-                        <img
-                            src="images/foto-05.jpg"
-                            alt="Fotografía de vivienda 2"
-                        >
-
-                    </a>
-
-                    <a class="gallery-item">
-
-                        <img
-                            src="images/foto-06.jpg"
-                            alt="Fotografía de vivienda 3"
-                        >
-
-                    </a>
-
-                    <a class="gallery-item">
-
-                        <img
-                            src="images/foto-07.jpg"
-                            alt="Fotografía de vivienda 4"
-                        >
-
-                    </a>
-
+                    <a class="gallery-item"><img src="images/foto-04.jpg" alt="Fotografía de vivienda 1"></a>
+                    <a class="gallery-item"><img src="images/foto-05.jpg" alt="Fotografía de vivienda 2"></a>
+                    <a class="gallery-item"><img src="images/foto-06.jpg" alt="Fotografía de vivienda 3"></a>
+                    <a class="gallery-item"><img src="images/foto-07.jpg" alt="Fotografía de vivienda 4"></a>
                 </div>
-
             </div>
-
-
         </section>
-
-
-        <!-- =========================
-             VÍDEO
-        ========================== -->
-
         <section class="video-section">
-
             <div class="video-wrapper">
-
-                <video
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                    preload="metadata"
-                    aria-label="Vídeo de fotografía y vídeo de espacios"
-                >
-
-                    <source
-                        src="images/video-01.mp4"
-                        type="video/mp4"
-                    >
-
+                <video autoplay muted loop playsinline preload="metadata" aria-label="Vídeo de fotografía y vídeo de espacios">
+                    <source src="images/video-01.mp4" type="video/mp4">
                 </video>
-
             </div>
-
         </section>
-
-
-        <!-- =========================
-             TARIFAS
-        ========================== -->
-
-        <section
-            id="tarifas"
-            class="pricing"
-        >
-
-            <div class="pricing-header">
-
-                <h2>
-                    Tarifas.
-                </h2>
-
-                <p>
-                    Servicios de fotografía y vídeo con entrega rápida
-                    y adaptados a las necesidades de cada inmueble.
-                </p>
-
-            </div>
-
-
-            <!-- COLABORACIONES CON AGENCIAS -->
-
-            <div class="agency-note">
-
-                <strong>
-                    Colaboraciones con agencias
-                </strong>
-
-                <p>
-                    Para agencias con un volumen habitual de trabajo,
-                    se ofrecen tarifas especiales de colaboración.
-                    Contacta conmigo para conocer las condiciones.
-                </p>
-
-            </div>
-
-
-            <!-- NECESIDADES ESPECÍFICAS -->
-
-            <div class="agency-note">
-
-                <strong>
-                    Necesidades específicas
-                </strong>
-
-                <p>
-                    Promociones inmobiliarias, viviendas de gran tamaño,
-                    contenido para redes u otros trabajos con necesidades
-                    especiales se presupuestan de forma personalizada.
-                </p>
-
-            </div>
-
-
-            <!-- TARIFAS -->
-
-            <div class="pricing-grid">
-
-
-                <!-- ESENCIAL -->
-
-                <article class="price-card">
-
-                    <div>
-
-                        <h3>
-                            Esencial
-                        </h3>
-
-                        <div class="price">
-                            70 €
-                        </div>
-
-                        <ul>
-
-                            <li>
-                                Hasta 20 fotografías
-                            </li>
-
-                            <li>
-                                Corrección de perspectiva y color
-                            </li>
-
-                            <li>
-                                Entrega digital
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </article>
-
-
-                <!-- ESTÁNDAR -->
-
-                <article class="price-card recommended">
-
-                    <span class="recommended-label">
-                        Recomendado
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Estándar
-                        </h3>
-
-                        <div class="price">
-                            100 €
-                        </div>
-
-                        <ul>
-
-                            <li>
-                                Hasta 30 fotografías
-                            </li>
-
-                            <li>
-                                Corrección de perspectiva y color
-                            </li>
-
-                            <li>
-                                Entrega digital
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PREMIUM -->
-
-                <article class="price-card">
-
-                    <div>
-
-                        <h3>
-                            Premium
-                        </h3>
-
-                        <div class="price">
-                            250 €
-                        </div>
-
-                        <ul>
-
-                            <li>
-                                Hasta 40 fotografías
-                            </li>
-
-                            <li>
-                                Vídeo inmobiliario
-                            </li>
-
-                            <li>
-                                Corrección de perspectiva y color
-                            </li>
-
-                            <li>
-                                Entrega en menos de 12 horas
-                            </li>
-
-                            <li>
-                                Entrega digital
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </article>
-
-
-            </div>
-
-
-            <!-- INFORMACIÓN ADICIONAL -->
-
-            <div class="pricing-notes">
-
-
-                <div class="pricing-note">
-
-                    <strong>
-                        Fotografía adicional
-                    </strong>
-
-                    7 € por fotografía.
-
-                </div>
-
-
-                <div class="pricing-note">
-
-                    <strong>
-                        Entrega estándar
-                    </strong>
-
-                    Todos los reportajes se entregan en un plazo
-                    de 24–48 horas.
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-        <!-- =========================
-             CONTACTO
-        ========================== -->
-
-        <section
-            id="contacto"
-            class="contact"
-        >
-
-            <h2>
-                ¿Hablamos?
-            </h2>
-
-
+        <section id="contacto" class="contact">
+            <h2>¿Hablamos?</h2>
             <div class="contact-links">
-
-
-                <a
-                    class="contact-link"
-                    href="mailto:contacto.miguelblanco@gmail.com"
-                >
-                    contacto.miguelblanco@gmail.com
-                </a>
-
-
-                <a
-                    class="contact-link"
-                    href="tel:+34638340659"
-                >
-                    +34 638 340 659
-                </a>
-
-
-                <a
-                    class="contact-link"
-                    href="https://www.instagram.com/miguelblnco/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Instagram · @miguelblnco
-                </a>
-
-
+                <a class="contact-link" href="mailto:contacto.miguelblanco@gmail.com">contacto.miguelblanco@gmail.com</a>
+                <a class="contact-link" href="tel:+34638340659">+34 638 340 659</a>
+                <a class="contact-link" href="https://www.instagram.com/miguelblnco/" target="_blank" rel="noopener noreferrer">Instagram · @miguelblnco</a>
             </div>
-
         </section>
-
-
     </main>
-
-
-    <!-- =========================
-         PIE
-    ========================== -->
-
     <footer>
-
-        <span>
-            © 2026 Miguel Blanco
-        </span>
-
-        <span>
-            Fotografía y vídeo de espacios
-        </span>
-
+        <span>© 2026 Miguel Blanco</span>
+        <span>Fotografía y vídeo de espacios</span>
     </footer>
-
-
-    <!-- =========================
-         LIGHTBOX
-    ========================== -->
-
-    <div
-        class="lightbox"
-        id="lightbox"
-    >
-
-        <span
-            class="lightbox-close"
-            id="lightboxClose"
-        >
-            &times;
-        </span>
-
-
-        <img
-            id="lightboxImage"
-            src=""
-            alt="Fotografía ampliada"
-        >
-
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img id="lightboxImage" src="" alt="Fotografía ampliada">
     </div>
-
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
-
     <script>
-
-        const galleryItems =
-            document.querySelectorAll(".gallery-item");
-
-        const lightbox =
-            document.getElementById("lightbox");
-
-        const lightboxImage =
-            document.getElementById("lightboxImage");
-
-        const lightboxClose =
-            document.getElementById("lightboxClose");
-
-
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxClose = document.getElementById('lightboxClose');
         galleryItems.forEach(item => {
-
-            item.addEventListener("click", event => {
-
+            item.addEventListener('click', event => {
                 event.preventDefault();
-
-                const image =
-                    item.querySelector("img");
-
-                lightboxImage.src =
-                    image.src;
-
-                lightboxImage.alt =
-                    image.alt;
-
-                lightbox.classList.add("active");
-
-                document.body.style.overflow =
-                    "hidden";
-
+                const image = item.querySelector('img');
+                lightboxImage.src = image.src;
+                lightboxImage.alt = image.alt;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
             });
-
         });
-
-
         function closeLightbox() {
-
-            lightbox.classList.remove("active");
-
-            document.body.style.overflow =
-                "";
-
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
         }
-
-
-        lightboxClose.addEventListener(
-            "click",
-            closeLightbox
-        );
-
-
-        lightbox.addEventListener(
-            "click",
-            event => {
-
-                if (
-                    event.target === lightbox
-                ) {
-
-                    closeLightbox();
-
-                }
-
-            }
-        );
-
-
-        document.addEventListener(
-            "keydown",
-            event => {
-
-                if (
-                    event.key === "Escape"
-                ) {
-
-                    closeLightbox();
-
-                }
-
-            }
-        );
-
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', event => {
+            if (event.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') closeLightbox();
+        });
     </script>
-
-
 </body>
 </html>
